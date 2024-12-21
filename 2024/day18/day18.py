@@ -17,6 +17,7 @@ while True:
     
 f.close()
 
+
 # 메모리 공간 초기화
 grid_size = 71  # 예시에서는 0부터 6까지
 grid = [['.' for _ in range(grid_size)] for _ in range(grid_size)]

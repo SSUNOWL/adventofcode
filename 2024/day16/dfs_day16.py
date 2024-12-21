@@ -1,6 +1,6 @@
 from collections import deque
-
-f = open("day16.txt", 'r')
+# 맞긴한데.. 효율이 안나와
+f = open("2024/day16/day16.txt", 'r')
 
 data = []
 while True:
@@ -27,7 +27,6 @@ def bfs(start, goal):
         
         (x, y), path = queue.popleft()
         if (x, y) == goal:
-            print(path)
             paths.append(path)
         
         for dx, dy in [(0, 1), (1, 0), (0, -1), (-1, 0)]:
@@ -65,6 +64,13 @@ for path in paths:
 
     r += num * 1000
     res.append(r)
-    print(r)
 print(min(res))
 
+# part2
+tile = set()
+for i in range(len(res)):
+    if min(res) == res[i]:
+        for T in paths[i]:
+            tile.add(T)
+
+print(len(tile))
