@@ -1,4 +1,6 @@
-f = open("day17.txt", 'r')
+from functools import cache
+
+f = open("2024/day17/day17.txt", 'r')
 
 data = {}
 while True:
@@ -13,7 +15,7 @@ while True:
             data[spl.split(' ')[0].split(':')[0]] = spl.split(' ')[1].replace(',', '')
 
 f.close()
-
+@cache
 def combo(A, B, C, opr):
     a = int(opr)
     if a > 3:
@@ -68,9 +70,11 @@ code = data['Program'][pos]
 opr = data['Program'][pos + 1]
 res1 = []
 
+
 copy = []
 for i in data['Program']:
     copy.append(int(i))
+print(copy)
 num =  1
 
 
